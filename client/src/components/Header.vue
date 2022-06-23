@@ -1,11 +1,19 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import router from "@/router"
+import router from "@/router";
 
 const input = ref(null);
 
-function goHome(e: any) { 
-  router.push("/")
+function goHome(e: any) {
+  router.push({ name: "home" });
+}
+
+const searchQuery = ref("");
+function search(e: any) {
+  e.preventDefault();
+  if (searchQuery.value.length > 0) {
+    router.push({ name: "search", query: { query: searchQuery.value } });
+  }
 }
 </script>
 
@@ -14,10 +22,15 @@ function goHome(e: any) {
     <h1 class="mb-0 logo" @click="goHome">C++<b>Hub</b></h1>
     <div class="mb-4">Best lectures, articles and books on C++</div>
     <div class="w-100 d-flex flex-row justify-content-center">
-      <div class="search d-flex flex-row flex-fill">
-        <input class="flex-fill form-control" type="text" placeholder="What do you want to find?">
-        <button type="button" class="btn btn-primary ms-2">Search</button>
-      </div>
+      <form class="search d-flex flex-row flex-fill" @submit="search">
+        <input
+          class="flex-fill form-control"
+          type="text"
+          placeholder="What do you want to find?"
+          v-model="searchQuery"
+        />
+        <button type="submit" class="btn btn-primary ms-2">Search</button>
+      </form>
     </div>
   </div>
 
@@ -28,6 +41,7 @@ function goHome(e: any) {
 .search {
   max-width: 600px;
 }
+
 .logo:hover {
   cursor: pointer;
 }

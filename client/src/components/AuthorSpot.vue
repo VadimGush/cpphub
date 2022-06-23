@@ -3,7 +3,7 @@ const props = defineProps({
   picture: String,
 });
 
-const emit = defineEmits(["click"])
+const emit = defineEmits(["click"]);
 </script>
 
 <template>
@@ -18,8 +18,8 @@ const emit = defineEmits(["click"])
   min-width: 110px;
   line-height: 1.1em;
   font-weight: bold;
-  color: rgba(0,0,0,0.75);
-  background-color: rgba(0,0,0,0);
+  color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0);
   transition: 0.25s;
   border-radius: 0.5rem;
 }
@@ -31,7 +31,7 @@ const emit = defineEmits(["click"])
 }
 .author img {
   transition: 0.25s;
-  border: 4px solid rgba(0,0,0,0.1);
+  border: 4px solid rgba(0, 0, 0, 0.1);
   max-width: 70px;
   max-height: 70px;
   border-radius: 100%;
