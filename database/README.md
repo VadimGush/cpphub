@@ -6,4 +6,5 @@ If you want to make any changes to the content on C++Hub, this is the right plac
 
 ## Files
 
- * `database.json` - JSON array which lists all materials (videos, articles, papers, etc.) on C++Hub.
+ * `database.json` - JSON array which lists all materials (videos, articles, papers, etc.) on C++Hub
+ * `loader.py` - Python script that loads data from this directory to production databases
